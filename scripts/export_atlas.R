@@ -1,6 +1,10 @@
 #!/usr/bin/env Rscript
-# Export a ggseg atlas package to a single unified parquet file
-# Contains: label, hemi, region, view, geometry_wkt, vertices_json, color
+# Export a ggseg atlas package to normalized parquet tables
+# Output structure (mirrors R ggseg internal structure):
+#   {atlas}_core.parquet    - label, hemi, region, color (one row per label)
+#   {atlas}_2d.parquet      - label, view, geometry_wkt (one row per label+view)
+#   {atlas}_3d.parquet      - label, vertices_json (one row per label)
+#   {atlas}_mesh.parquet    - label, vertices_json, faces_json (for subcortical)
 
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) < 1) {
@@ -61,93 +65,93 @@ export_atlas <- function(atlas, atlas_name, out_dir) {
 
   palette <- atlas$palette %||% list()
   atlas_type <- atlas$type %||% "unknown"
-
-  # Get 2D sf data
+  core_data <- atlas$core
   sf_data <- atlas$data$sf %||% atlas$data$ggseg
-
-  # Get 3D data (vertices or meshes)
   vertices_data <- atlas$data$vertices
   meshes_data <- atlas$data$meshes
 
+  has_output <- FALSE
+
+  # 1. Export core table (label, hemi, region, color)
+  if (!is.null(core_data)) {
+    core_df <- core_data |>
+      select(any_of(c("label", "hemi", "region"))) |>
+      distinct()
+
+    if (length(palette) > 0) {
+      core_df$color <- as.character(palette[core_df$label])
+    }
+
+    out_file <- file.path(out_dir, paste0(atlas_name, "_core.parquet"))
+    write_parquet(as.data.frame(core_df), out_file)
+    cat("    Wrote:", out_file, "(", nrow(core_df), "labels )\n")
+    has_output <- TRUE
+  }
+
+  # 2. Export 2D geometry table (label, view, geometry_wkt)
   if (!is.null(sf_data) && inherits(sf_data, "sf")) {
-    # Start with 2D data and join core metadata (hemi, region)
-    df <- sf_data |>
+    sf_df <- sf_data |>
       mutate(geometry_wkt = st_as_text(geometry)) |>
-      st_drop_geometry()
+      st_drop_geometry() |>
+      select(label, view, geometry_wkt)
 
-    # Join core data (hemi, region) if not already present
-    core_data <- atlas$core
-    if (!is.null(core_data) && !"hemi" %in% names(df)) {
-      core_cols_to_join <- intersect(c("label", "hemi", "region"), names(core_data))
-      df <- df |> left_join(core_data[core_cols_to_join], by = "label")
-    }
+    out_file <- file.path(out_dir, paste0(atlas_name, "_2d.parquet"))
+    write_parquet(as.data.frame(sf_df), out_file)
+    cat("    Wrote:", out_file, "(", nrow(sf_df), "rows )\n")
+    has_output <- TRUE
+  }
 
-    # Add color from palette if not present
-    if (!"color" %in% names(df) && length(palette) > 0) {
-      df$color <- as.character(palette[df$label])
-    }
+  # 3. Export 3D vertices table (label, vertices_json)
+  if (!is.null(vertices_data)) {
+    verts_df <- vertices_data |>
+      mutate(vertices_json = sapply(vertices, function(v) {
+        as.character(jsonlite::toJSON(as.integer(v)))
+      })) |>
+      select(label, vertices_json)
 
-    # Add 3D vertices (join by label)
-    if (!is.null(vertices_data)) {
-      verts_df <- vertices_data |>
-        mutate(vertices_json = sapply(vertices, function(v) {
-          as.character(jsonlite::toJSON(as.integer(v)))
-        })) |>
-        select(label, vertices_json)
+    out_file <- file.path(out_dir, paste0(atlas_name, "_3d.parquet"))
+    write_parquet(as.data.frame(verts_df), out_file)
+    cat("    Wrote:", out_file, "(", nrow(verts_df), "labels )\n")
+    has_output <- TRUE
+  }
 
-      df <- df |> left_join(verts_df, by = "label")
-    }
-
-    # Ensure standard column order (only include columns that exist)
-    core_cols <- c("label", "hemi", "region")
-    present_core_cols <- intersect(core_cols, names(df))
-    other_cols <- setdiff(names(df), core_cols)
-    df <- df |> select(all_of(c(present_core_cols, other_cols)))
-
-    # Add metadata as attributes (will be in parquet schema metadata)
-    attr(df, "atlas_name") <- atlas$atlas %||% atlas_name
-    attr(df, "atlas_type") <- atlas_type
-
-    out_file <- file.path(out_dir, paste0(atlas_name, ".parquet"))
-    write_parquet(as.data.frame(df), out_file)
-    cat("    Wrote:", out_file, "\n")
-
-  } else if (!is.null(meshes_data)) {
-    # Subcortical/tract atlas with meshes only
+  # 4. Export mesh table for subcortical/tract atlases
+  if (!is.null(meshes_data)) {
     meshes_list <- list()
     for (i in seq_len(nrow(meshes_data))) {
       row <- meshes_data[i, ]
       mesh <- row$mesh[[1]]
       meshes_list[[i]] <- data.frame(
         label = as.character(row$label),
-        hemi = as.character(row$hemi %||% NA),
-        region = as.character(row$region %||% row$label),
         vertices_json = as.character(jsonlite::toJSON(mesh$vertices)),
         faces_json = as.character(jsonlite::toJSON(mesh$faces)),
-        color = as.character(palette[row$label] %||% NA),
         stringsAsFactors = FALSE
       )
     }
-    df <- bind_rows(meshes_list)
+    mesh_df <- bind_rows(meshes_list)
 
-    out_file <- file.path(out_dir, paste0(atlas_name, ".parquet"))
-    write_parquet(df, out_file)
-    cat("    Wrote:", out_file, "\n")
+    out_file <- file.path(out_dir, paste0(atlas_name, "_mesh.parquet"))
+    write_parquet(mesh_df, out_file)
+    cat("    Wrote:", out_file, "(", nrow(mesh_df), "meshes )\n")
+    has_output <- TRUE
   }
 
   # Write metadata JSON
-  meta <- list(
-    atlas = atlas$atlas %||% atlas_name,
-    type = atlas_type,
-    has_2d = !is.null(sf_data),
-    has_3d_vertices = !is.null(vertices_data),
-    has_3d_meshes = !is.null(meshes_data),
-    n_labels = length(unique(atlas$core$label %||% character(0)))
-  )
-  writeLines(
-    jsonlite::toJSON(meta, auto_unbox = TRUE, pretty = TRUE),
-    file.path(out_dir, paste0(atlas_name, "_meta.json"))
-  )
+  if (has_output) {
+    meta <- list(
+      atlas = atlas$atlas %||% atlas_name,
+      type = atlas_type,
+      has_core = !is.null(core_data),
+      has_2d = !is.null(sf_data),
+      has_3d = !is.null(vertices_data),
+      has_mesh = !is.null(meshes_data),
+      n_labels = length(unique(core_data$label %||% character(0)))
+    )
+    writeLines(
+      jsonlite::toJSON(meta, auto_unbox = TRUE, pretty = TRUE),
+      file.path(out_dir, paste0(atlas_name, "_meta.json"))
+    )
+  }
 }
 
 for (atlas_name in atlas_names) {
