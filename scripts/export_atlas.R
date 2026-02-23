@@ -23,6 +23,9 @@ library(arrow)
 library(sf)
 library(dplyr)
 
+# Define null coalescing operator if not available
+`%||%` <- function(x, y) if (is.null(x)) y else x
+
 # Create output directory
 out_dir <- file.path("exports", package_name)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
