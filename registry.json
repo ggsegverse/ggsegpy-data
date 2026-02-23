@@ -98,16 +98,10 @@
     "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegDKT-v2.0.0",
     "files": [
       {
-        "name": "dkt_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_3d.parquet",
-        "sha256": "f840a9762b52c258cf1dedfeea06a22eb116521e64b3e0b85e601be4927286eb",
-        "size": 29410
-      },
-      {
         "name": "dkt.parquet",
         "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt.parquet",
-        "sha256": "892d8d4fb307cd2d4db8aa2fe02bb2399a0a6d45b10b9c9f2359281a9c43e7bd",
-        "size": 87582
+        "sha256": "23fef070068f99d6fabafb12d8c702e9140819d110fcc87002ab52498e55430b",
+        "size": 116867
       }
     ],
     "release_tag": "ggsegDKT-v2.0.0"
