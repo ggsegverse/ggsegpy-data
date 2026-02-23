@@ -69,9 +69,11 @@ if (length(atlas_names) == 0) {
 export_atlas <- function(atlas, atlas_name, out_dir) {
   cat("  Exporting:", atlas_name, "\n")
 
-  # Export 2D polygon data
+  # Export 2D polygon data (sf in new format, ggseg in old format)
   sf_data <- NULL
-  if (!is.null(atlas$data$ggseg)) {
+  if (!is.null(atlas$data$sf)) {
+    sf_data <- atlas$data$sf
+  } else if (!is.null(atlas$data$ggseg)) {
     sf_data <- atlas$data$ggseg
   } else if (inherits(atlas, "sf")) {
     sf_data <- atlas
