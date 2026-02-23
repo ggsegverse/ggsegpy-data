@@ -98,22 +98,16 @@
     "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegDKT-v2.0.0",
     "files": [
       {
-        "name": "dkt_palette.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_palette.parquet",
-        "sha256": "3dda45bfca0056e0e51cb9101177c6cc09f842de733610f46631e58531e013d2",
-        "size": 1725
+        "name": "dkt_3d.parquet",
+        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_3d.parquet",
+        "sha256": "f840a9762b52c258cf1dedfeea06a22eb116521e64b3e0b85e601be4927286eb",
+        "size": 29410
       },
       {
-        "name": "dkt_3d_vertices.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_3d_vertices.parquet",
-        "sha256": "4354c56f5fbf04b5afc19911c59d1b92aa100d68927f539ecca234a50a30b848",
-        "size": 28943
-      },
-      {
-        "name": "dkt_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_2d.parquet",
-        "sha256": "48d049a94c17c4c63bf148f43c7026faa86300dd21522d17540bc6e0f66260a0",
-        "size": 87042
+        "name": "dkt.parquet",
+        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt.parquet",
+        "sha256": "892d8d4fb307cd2d4db8aa2fe02bb2399a0a6d45b10b9c9f2359281a9c43e7bd",
+        "size": 87582
       }
     ],
     "release_tag": "ggsegDKT-v2.0.0"
