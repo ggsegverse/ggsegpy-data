@@ -108,6 +108,12 @@
         "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_3d_vertices.parquet",
         "sha256": "4354c56f5fbf04b5afc19911c59d1b92aa100d68927f539ecca234a50a30b848",
         "size": 28943
+      },
+      {
+        "name": "dkt_2d.parquet",
+        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_2d.parquet",
+        "sha256": "48d049a94c17c4c63bf148f43c7026faa86300dd21522d17540bc6e0f66260a0",
+        "size": 87042
       }
     ],
     "release_tag": "ggsegDKT-v2.0.0"
