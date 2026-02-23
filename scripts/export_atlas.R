@@ -70,10 +70,17 @@ export_atlas <- function(atlas, atlas_name, out_dir) {
   meshes_data <- atlas$data$meshes
 
   if (!is.null(sf_data) && inherits(sf_data, "sf")) {
-    # Start with 2D data
+    # Start with 2D data and join core metadata (hemi, region)
     df <- sf_data |>
       mutate(geometry_wkt = st_as_text(geometry)) |>
       st_drop_geometry()
+
+    # Join core data (hemi, region) if not already present
+    core_data <- atlas$core
+    if (!is.null(core_data) && !"hemi" %in% names(df)) {
+      core_cols_to_join <- intersect(c("label", "hemi", "region"), names(core_data))
+      df <- df |> left_join(core_data[core_cols_to_join], by = "label")
+    }
 
     # Add color from palette if not present
     if (!"color" %in% names(df) && length(palette) > 0) {
@@ -91,10 +98,11 @@ export_atlas <- function(atlas, atlas_name, out_dir) {
       df <- df |> left_join(verts_df, by = "label")
     }
 
-    # Ensure standard column order
+    # Ensure standard column order (only include columns that exist)
     core_cols <- c("label", "hemi", "region")
+    present_core_cols <- intersect(core_cols, names(df))
     other_cols <- setdiff(names(df), core_cols)
-    df <- df |> select(all_of(c(core_cols, other_cols)))
+    df <- df |> select(all_of(c(present_core_cols, other_cols)))
 
     # Add metadata as attributes (will be in parquet schema metadata)
     attr(df, "atlas_name") <- atlas$atlas %||% atlas_name
