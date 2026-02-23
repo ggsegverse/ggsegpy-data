@@ -1,0 +1,107 @@
+name: Sync Atlases
+
+on:
+  schedule:
+    - cron: '0 4 * * 0'  # Weekly on Sunday at 4am UTC
+  workflow_dispatch:
+    inputs:
+      force_all:
+        description: 'Force re-export all atlases'
+        type: boolean
+        default: false
+      atlas:
+        description: 'Export specific atlas only (e.g., ggsegSchaefer)'
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3'
+          use-public-rspm: true
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests pyarrow pandas geopandas
+
+      - name: Install R dependencies
+        run: |
+          install.packages(c("jsonlite", "arrow", "sf", "dplyr"))
+          options(repos = c(
+            ggsegverse = "https://ggsegverse.r-universe.dev",
+            CRAN = "https://cloud.r-project.org"
+          ))
+          install.packages("ggseg.formats")
+        shell: Rscript {0}
+
+      - name: Fetch r-universe registry
+        run: python scripts/fetch_registry.py
+
+      - name: Determine atlases to update
+        id: diff
+        run: |
+          python scripts/diff_registry.py \
+            --force "${{ inputs.force_all }}" \
+            --atlas "${{ inputs.atlas }}" \
+            > atlases_to_update.txt
+          echo "atlases=$(cat atlases_to_update.txt | tr '\n' ' ')" >> $GITHUB_OUTPUT
+          echo "count=$(wc -l < atlases_to_update.txt | tr -d ' ')" >> $GITHUB_OUTPUT
+
+      - name: Export changed atlases
+        if: steps.diff.outputs.count != '0'
+        run: |
+          while read atlas; do
+            [ -z "$atlas" ] && continue
+            echo "::group::Exporting $atlas"
+            Rscript scripts/export_atlas.R "$atlas"
+            python scripts/compress_parquet.py "exports/$atlas"
+            echo "::endgroup::"
+          done < atlases_to_update.txt
+
+      - name: Create/Update releases
+        if: steps.diff.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          while read atlas; do
+            [ -z "$atlas" ] && continue
+            version=$(jq -r ".\"$atlas\".version" registry_new.json)
+            tag="${atlas}-v${version}"
+
+            # Delete existing release if exists
+            gh release delete "$tag" --yes 2>/dev/null || true
+
+            # Create new release
+            gh release create "$tag" \
+              --title "$atlas v$version" \
+              --notes "Auto-exported from ggsegverse r-universe" \
+              exports/$atlas/*.parquet
+
+            # Update registry with release URL
+            python scripts/update_registry_urls.py "$atlas" "$tag"
+          done < atlases_to_update.txt
+
+      - name: Commit registry
+        if: steps.diff.outputs.count != '0'
+        run: |
+          mv registry_new.json registry.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add registry.json
+          git diff --staged --quiet || git commit -m "Update registry [skip ci]"
+          git push

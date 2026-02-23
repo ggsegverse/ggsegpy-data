@@ -1,0 +1,9 @@
+# Exports (uploaded to releases, not committed)
+exports/
+
+# Temp files
+registry_new.json
+atlases_to_update.txt
+*.pyc
+__pycache__/
+.Rhistory
