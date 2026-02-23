@@ -85,6 +85,13 @@ jobs:
         run: |
           while read atlas; do
             [ -z "$atlas" ] && continue
+
+            # Skip if no parquet files were generated
+            if ! ls exports/$atlas/*.parquet 1>/dev/null 2>&1; then
+              echo "No parquet files for $atlas, skipping release"
+              continue
+            fi
+
             version=$(jq -r ".\"$atlas\".version" registry_new.json)
             tag="${atlas}-v${version}"
 
