@@ -1,2 +1,214 @@
 {
+  "ggsegDestrieux": {
+    "version": "2.0.2",
+    "sha": "d7b0f0b8c6c5aa8eb63048714f090867743be255",
+    "title": "Destrieux Atlas for the 'ggsegverse' Ecosystem",
+    "description": "Destrieux cortical atlas (aparc.a2009s) for the\n'ggsegverse' ecosystem.  Provides a 'ggseg_atlas' object with\n2D polygon geometry for use with 'ggsegverse'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegYeo2011": {
+    "version": "2.0.0",
+    "sha": "0c349a4c4a290965c8aca94f3dd1d7edef5ca250",
+    "title": "Yeo 2011 Atlas for the 'ggseg' Ecosystem",
+    "description": "Yeo 2011 resting-state network atlases for the 'ggseg'\necosystem. Provides 'ggseg_atlas' objects with 2D polygon\ngeometry for use with 'ggseg'. Includes both 7-network and\n17-network parcellations.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegSchaefer": {
+    "version": "2.0.0",
+    "sha": "ea9b9146d384b86f70b2ec33b83aff4307f4e660",
+    "title": "Schaefer Atlas for the 'ggseg' Ecosystem",
+    "description": "Schaefer cortical atlas for the 'ggseg' ecosystem.\nProvides unified 'ggseg_atlas' objects with both 2D polygon\ngeometry and 3D vertex indices, for use with 'ggseg' and\n'ggseg3d'. Includes 7-network and 17-network parcellations at\nresolutions from 100 to 1000 parcels.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegPower": {
+    "version": "2.0.0",
+    "sha": "f64e11a1cd77db8e3597718a9ba6cb6171f946b5",
+    "title": "Power Atlas for the 'ggseg' Ecosystem",
+    "description": "Power functional network cortical parcellation atlas for\nthe 'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object\nwith 2D polygon geometry for use with 'ggseg'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegKleist": {
+    "version": "2.0.0",
+    "sha": "0b895393176dd352a17b1f770f2f88905eb1019a",
+    "title": "Kleist Atlas for the 'ggseg' Ecosystem",
+    "description": "Historical Kleist functional segregation atlas for the\n'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object with\nboth 2D polygon geometry and 3D vertex indices, for use with\n'ggseg' and 'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegICBM": {
+    "version": "2.0.0",
+    "sha": "d3b5aa3edb407fe75ddc4487a4354f0907802a96",
+    "title": "ICBM Atlas for the 'ggseg' Ecosystem",
+    "description": "ICBM white matter atlas for the 'ggseg' ecosystem.\nProvides a unified 'ggseg_atlas' object with 3D mesh geometry,\nfor use with 'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegIca": {
+    "version": "2.0.0",
+    "sha": "a110e7b8336eccc5047568111c0eb534abb666fb",
+    "title": "ICA Atlas for the 'ggseg' Ecosystem",
+    "description": "Probabilistic independent component analysis (ICA)\ncortical atlas for the 'ggseg' ecosystem. Provides a unified\n'ggseg_atlas' object with 2D polygon geometry for use with\n'ggseg'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegGordon": {
+    "version": "2.0.0",
+    "sha": "913002502b324451e9f15c488a71972ce1f5bfb7",
+    "title": "Gordon Atlas for the 'ggseg' Ecosystem",
+    "description": "Gordon resting-state cortical parcellation atlas for the\n'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object with\n2D polygon geometry for use with 'ggseg'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegFlechsig": {
+    "version": "2.0.0",
+    "sha": "f979c82b38e3f3d57cfc5be9d7aa91c284198809",
+    "title": "Flechsig Myelogenetic Atlas for the 'ggseg' Ecosystem",
+    "description": "Flechsig myelogenetic cortical atlas for the 'ggseg'\necosystem. Provides a unified 'ggseg_atlas' object with both 2D\npolygon geometry and 3D vertex indices, for use with 'ggseg'\nand 'ggseg3d'. Based on the supplementary materials of\nPijnenburg et al. (2021).",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegEconomo": {
+    "version": "2.0.0",
+    "sha": "e5a68034d9fc9dd43f0031bc9626055d0a1cff9d",
+    "title": "Economo Atlas for the 'ggseg' Ecosystem",
+    "description": "Economo & Koskinas 1925 historical cytoarchitectonic atlas\nfor the 'ggseg' ecosystem. Provides a unified 'ggseg_atlas'\nobject with both 2D polygon geometry and 3D vertex indices, for\nuse with 'ggseg' and 'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegDKT": {
+    "version": "2.0.0",
+    "sha": "0225b0e81e89c6aefdb4424332951c3fc247a662",
+    "title": "Desikan-Killiany-Tourville Atlas for the ggseg-Plotting Tool",
+    "description": "Desikan-Killiany-Tourville cortical atlas for the ggseg\necosystem. Contains 2D polygon geometry and 3D vertex indices.",
+    "exported": true,
+    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegDKT-v2.0.0",
+    "files": [
+      {
+        "name": "dkt_palette.parquet",
+        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_palette.parquet",
+        "sha256": "3dda45bfca0056e0e51cb9101177c6cc09f842de733610f46631e58531e013d2",
+        "size": 1725
+      },
+      {
+        "name": "dkt_3d_vertices.parquet",
+        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegDKT-v2.0.0/dkt_3d_vertices.parquet",
+        "sha256": "4354c56f5fbf04b5afc19911c59d1b92aa100d68927f539ecca234a50a30b848",
+        "size": 28943
+      }
+    ],
+    "release_tag": "ggsegDKT-v2.0.0"
+  },
+  "ggsegCampbell": {
+    "version": "2.0.0",
+    "sha": "ca2f48db293460d4092e88554a3ddd3233b86b53",
+    "title": "Campbell Cortical Atlas (1905) for the 'ggseg' Ecosystem",
+    "description": "Campbell (1905) cortical atlas for the 'ggseg' ecosystem.\nProvides a unified 'ggseg_atlas' object with both 2D polygon\ngeometry and 3D vertex indices, for use with 'ggseg' and\n'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegBrodmann": {
+    "version": "2.0.0",
+    "sha": "bc7acf67aea708258b7f0518b823f7b56dc73c1e",
+    "title": "Brodmann Areas Atlas for the 'ggseg' Ecosystem",
+    "description": "Brodmann areas atlas for the 'ggseg' ecosystem. Provides a\nunified 'ggseg_atlas' object with both 2D polygon geometry and\n3D vertex indices, for use with 'ggseg' and 'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegBrainnetome": {
+    "version": "2.0.0",
+    "sha": "33f08784fb41130f9b4d1bdf93bce56878970957",
+    "title": "Brainnetome Atlas for the 'ggseg' Ecosystem",
+    "description": "Brainnetome atlas for the 'ggseg' ecosystem. Provides a\n'ggseg_atlas' object with 2D polygon geometry for use with\n'ggseg'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegArslan": {
+    "version": "2.0.0",
+    "sha": "2cf182e2d7755170449a1f42020cc51410a6ac56",
+    "title": "Arslan Atlas for the 'ggseg' Ecosystem",
+    "description": "Arslan multi-level parcellation atlas for the 'ggseg'\necosystem. Provides a unified 'ggseg_atlas' object with both 2D\npolygon geometry and 3D vertex indices, for use with 'ggseg'\nand 'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegAicha": {
+    "version": "2.0.0",
+    "sha": "85f2862b0c09109162c7d022ce14ce70bb82748d",
+    "title": "AICHA Atlas for the 'ggseg' Ecosystem",
+    "description": "AICHA (Atlas of Intrinsic Connectivity of Homotopic Areas)\natlas for the 'ggseg' ecosystem. Provides a unified\n'ggseg_atlas' object with both 2D polygon geometry and 3D\nvertex indices, for use with 'ggseg' and 'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegAAL": {
+    "version": "2.0.0",
+    "sha": "9849e7c1b4b280f1de16d99174c0ed5918454d66",
+    "title": "AAL Atlases for the 'ggseg' Ecosystem",
+    "description": "AAL (Automated Anatomical Labeling) atlases for the\n'ggseg' ecosystem. Provides unified 'ggseg_atlas' objects for\nAAL2 (cortical, Rolls et al. 2015) and AAL3 (cortical,\nsubcortical, cerebellum, Rolls et al. 2020), with both 2D\npolygon geometry and 3D vertex/mesh data for use with 'ggseg'\nand 'ggseg3d'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegGlasser": {
+    "version": "2.0.0",
+    "sha": "c04bac6f7afa301c22a233866ec5d43139548b73",
+    "title": "Glasser Atlas for the 'ggseg' Ecosystem",
+    "description": "Glasser multi-modal cortical parcellation (HCP) atlas for\nthe 'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object\nwith 2D polygon geometry for use with 'ggseg'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegHO": {
+    "version": "2.0.0",
+    "sha": "e2998a5a43218f5a92a8e6bae9ad0bac41e2c566",
+    "title": "Harvard-Oxford Atlas for the 'ggseg' Ecosystem",
+    "description": "Harvard-Oxford cortical atlas for the 'ggseg' ecosystem.\nProvides a unified 'ggseg_atlas' object with 2D polygon\ngeometry for use with 'ggseg'.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegTracula": {
+    "version": "1.0.1.002",
+    "sha": "a31b2300145609a104bd4f1aab543148e5c95cd4",
+    "title": "Tracula datasets for the ggseg-plotting tool",
+    "description": "This is a support package for the ggseg, and ggseg3d\npackages. It contains the Tracula atlases to plot using\nfunctions from those two packages.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegChen": {
+    "version": "1.0.01",
+    "sha": "af5c130078cea024d43b25fdf90cab857ca6f14e",
+    "title": "Chen datasets for the ggseg-plotting tool",
+    "description": "This is a support package for the ggseg, and ggseg3d\npackages. It contains the Chen atlases to plot using functions\nfrom those two packages.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  },
+  "ggsegJHU": {
+    "version": "1.0.1.001",
+    "sha": "fb0e80d41a38df29e2f2337b4ba1f1a2f66c3568",
+    "title": "JHU datasets for the ggseg-plotting tool",
+    "description": "This is a support package for the ggseg, and ggseg3d\npackages. It contains the JHU atlases to plot using functions\nfrom those two packages.",
+    "exported": false,
+    "release_url": null,
+    "files": []
+  }
 }
