@@ -27,14 +27,21 @@ library(dplyr)
 out_dir <- file.path("exports", package_name)
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
-# Load the package and find atlas objects
-pkg_env <- asNamespace(package_name)
-pkg_exports <- ls(pkg_env)
+# Load the package
+library(package_name, character.only = TRUE)
 
-# Find brain_atlas objects
+# Find brain_atlas objects in the package's data
+# Get list of data objects in package
+pkg_data <- data(package = package_name)$results[, "Item"]
+cat("Data objects in package:", paste(pkg_data, collapse = ", "), "\n")
+
+# Load and check each data object
 atlas_names <- c()
-for (obj_name in pkg_exports) {
-  obj <- get(obj_name, envir = pkg_env)
+for (obj_name in pkg_data) {
+  # Load the data object
+  data(list = obj_name, package = package_name, envir = environment())
+  obj <- get(obj_name, envir = environment())
+
   if (inherits(obj, "brain_atlas")) {
     atlas_names <- c(atlas_names, obj_name)
   }
@@ -42,9 +49,16 @@ for (obj_name in pkg_exports) {
 
 cat("Found atlases:", paste(atlas_names, collapse = ", "), "\n")
 
+if (length(atlas_names) == 0) {
+  cat("No brain_atlas objects found in package\n")
+  quit(status = 0)
+}
+
 # Export each atlas
 for (atlas_name in atlas_names) {
-  atlas <- get(atlas_name, envir = pkg_env)
+  # Get the atlas object
+  data(list = atlas_name, package = package_name, envir = environment())
+  atlas <- get(atlas_name, envir = environment())
   cat("  Exporting:", atlas_name, "\n")
 
   # Export 2D polygon data (ggseg sf)
