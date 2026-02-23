@@ -30,19 +30,27 @@ dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 # Load the package
 library(package_name, character.only = TRUE)
 
-# Find brain_atlas objects in the package's data
-# Get list of data objects in package
-pkg_data <- data(package = package_name)$results[, "Item"]
-cat("Data objects in package:", paste(pkg_data, collapse = ", "), "\n")
+# Get all exports from the package
+pkg_exports <- ls(paste0("package:", package_name))
+cat("Package exports:", paste(pkg_exports, collapse = ", "), "\n")
 
-# Load and check each data object
+# Find atlas functions/objects
 atlas_names <- c()
-for (obj_name in pkg_data) {
-  # Load the data object
-  data(list = obj_name, package = package_name, envir = environment())
-  obj <- get(obj_name, envir = environment())
+for (obj_name in pkg_exports) {
+  obj <- get(obj_name, envir = asNamespace(package_name))
 
-  if (inherits(obj, "brain_atlas")) {
+  # Check if it's a function that returns brain_atlas
+  if (is.function(obj)) {
+    tryCatch({
+      result <- obj()
+      if (inherits(result, "brain_atlas") || inherits(result, "ggseg_atlas")) {
+        atlas_names <- c(atlas_names, obj_name)
+      }
+    }, error = function(e) {
+      # Function might need arguments, skip
+    })
+  } else if (inherits(obj, "brain_atlas") || inherits(obj, "ggseg_atlas")) {
+    # Direct brain_atlas object
     atlas_names <- c(atlas_names, obj_name)
   }
 }
@@ -54,18 +62,21 @@ if (length(atlas_names) == 0) {
   quit(status = 0)
 }
 
-# Export each atlas
-for (atlas_name in atlas_names) {
-  # Get the atlas object
-  data(list = atlas_name, package = package_name, envir = environment())
-  atlas <- get(atlas_name, envir = environment())
+# Helper to export an atlas object
+export_atlas <- function(atlas, atlas_name, out_dir) {
   cat("  Exporting:", atlas_name, "\n")
 
-  # Export 2D polygon data (ggseg sf)
+  # Export 2D polygon data
+  sf_data <- NULL
   if (!is.null(atlas$data$ggseg)) {
     sf_data <- atlas$data$ggseg
+  } else if (inherits(atlas, "sf")) {
+    sf_data <- atlas
+  } else if (!is.null(atlas$data) && inherits(atlas$data, "sf")) {
+    sf_data <- atlas$data
+  }
 
-    # Convert sf to data frame with WKT geometry
+  if (!is.null(sf_data) && inherits(sf_data, "sf")) {
     df <- sf_data |>
       mutate(geometry_wkt = st_as_text(geometry)) |>
       st_drop_geometry() |>
@@ -90,7 +101,7 @@ for (atlas_name in atlas_names) {
     cat("    Wrote:", out_file, "\n")
   }
 
-  # Export 3D mesh data (for subcortical/tract atlases)
+  # Export 3D mesh data
   if (!is.null(atlas$data$meshes)) {
     meshes_list <- list()
     for (i in seq_len(nrow(atlas$data$meshes))) {
@@ -122,12 +133,27 @@ for (atlas_name in atlas_names) {
 
   # Export metadata
   meta <- list(
-    atlas = atlas$atlas,
-    type = atlas$type,
-    labels = atlas$core$label
+    atlas = atlas$atlas %||% atlas_name,
+    type = atlas$type %||% "unknown"
   )
+  if (!is.null(atlas$core$label)) {
+    meta$labels <- atlas$core$label
+  }
   meta_json <- jsonlite::toJSON(meta, auto_unbox = TRUE, pretty = TRUE)
   writeLines(meta_json, file.path(out_dir, paste0(atlas_name, "_meta.json")))
+}
+
+# Export each atlas
+for (atlas_name in atlas_names) {
+  obj <- get(atlas_name, envir = asNamespace(package_name))
+
+  if (is.function(obj)) {
+    atlas <- obj()
+  } else {
+    atlas <- obj
+  }
+
+  export_atlas(atlas, atlas_name, out_dir)
 }
 
 cat("Done exporting", package_name, "\n")
