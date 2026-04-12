@@ -4,816 +4,108 @@
     "sha": "be28b3af42545c3f4e0c10ad25ac243d6c43fc29",
     "title": "JHU White Matter Atlases for the 'ggseg' Ecosystem",
     "description": "JHU and ICBM white matter atlases for the 'ggseg'\necosystem. Includes JHU probabilistic tracts (Hua et al. 2008),\nICBM-DTI-81 white matter labels (Mori et al. 2005), and ICBM\ntract meshes. Provides unified 'ggseg_atlas' objects with 3D\nmesh geometry, for use with 'ggseg3d'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegJHU-v2.0.0",
-    "files": [
-      {
-        "name": "jhu_labels_mesh.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/jhu_labels_mesh.parquet",
-        "sha256": "36cfc737b8db44f483ccb4505ffcc6f0f95f5888328885b6c50c755f82c767d9",
-        "size": 973934
-      },
-      {
-        "name": "jhu_tracts_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/jhu_tracts_core.parquet",
-        "sha256": "adc1817fcdebe3f630be83fd28d8d039d3b18d85c22b1101bf9d88572bc11e8e",
-        "size": 1541
-      },
-      {
-        "name": "icbm_mesh.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/icbm_mesh.parquet",
-        "sha256": "d923fa5f82ac81c066ddf5d6707172a3710cc33d2be2d72e76f189f43bb630e5",
-        "size": 1830227
-      },
-      {
-        "name": "jhu_labels_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/jhu_labels_core.parquet",
-        "sha256": "ce8fcbfa5242501faf322d0a5bdefe425334ebfa544e4870e28742b45a6f6df3",
-        "size": 1621
-      },
-      {
-        "name": "jhu_labels_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/jhu_labels_2d.parquet",
-        "sha256": "dbd81b0c1cc65b6e620b5d27944bd4a97ed3af6df0ad61eb2882c98c54fc32d1",
-        "size": 32949
-      },
-      {
-        "name": "jhu_tracts_mesh.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/jhu_tracts_mesh.parquet",
-        "sha256": "716289a45781d12a40b9060f0003d110d1d793b4473f0bc066293bf34ffcff45",
-        "size": 864479
-      },
-      {
-        "name": "jhu_tracts_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/jhu_tracts_2d.parquet",
-        "sha256": "153bb5f0087071c55e0e178d0989d79f07a69bf17f79f23bc05385d9c6ab274c",
-        "size": 33293
-      },
-      {
-        "name": "icbm_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegJHU-v2.0.0/icbm_core.parquet",
-        "sha256": "56af4d2ffe63f269c577fd187f2f2324b996a60904b735e98142fd7876c2ead4",
-        "size": 2576
-      }
-    ],
-    "release_tag": "ggsegJHU-v2.0.0"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegBrainnetome": {
     "version": "2.0.3",
     "sha": "804c7a07fcc6234c17ae91a6371cf0844265bbb9",
     "title": "Brainnetome Atlas for the 'ggsegverse' Ecosystem",
     "description": "Brainnetome atlas for the 'ggseg' ecosystem. Provides\ncortical and subcortical 'ggseg_atlas' objects with 2D polygon\ngeometry and 3D vertex indices for use with 'ggseg' and\n'ggseg3d'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegBrainnetome-v2.0.3",
-    "files": [
-      {
-        "name": "brainnetome_sub_mesh.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegBrainnetome-v2.0.3/brainnetome_sub_mesh.parquet",
-        "sha256": "e200a7688bef475194995cbac036b68246c5fd8529daf1e96454c0e106abcb1e",
-        "size": 604142
-      },
-      {
-        "name": "brainnetome_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegBrainnetome-v2.0.3/brainnetome_2d.parquet",
-        "sha256": "4bc9ed3e8f53e7a7308d59ea2f035a472082f45942a9e64c2b1f42210ff38ddb",
-        "size": 709367
-      },
-      {
-        "name": "brainnetome_sub_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegBrainnetome-v2.0.3/brainnetome_sub_2d.parquet",
-        "sha256": "39ea500c15a0d09ebf61add900f3eac62029548e5579265d646fb5775eae2694",
-        "size": 18765
-      },
-      {
-        "name": "brainnetome_sub_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegBrainnetome-v2.0.3/brainnetome_sub_core.parquet",
-        "sha256": "c5385158f1dec564c246f7fe1e6e4aaba15a8b1ccd436648f0e1916efb10dea4",
-        "size": 1595
-      },
-      {
-        "name": "brainnetome_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegBrainnetome-v2.0.3/brainnetome_3d.parquet",
-        "sha256": "ed9089fa05a89d108d25f897a69ceb374c2b51b80744746cb0e600590b0df552",
-        "size": 27546
-      },
-      {
-        "name": "brainnetome_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegBrainnetome-v2.0.3/brainnetome_core.parquet",
-        "sha256": "9d850b90f36561255577c60f0f732a5ee768a30bdcbb035deb7f3fa3033bbab0",
-        "size": 4326
-      }
-    ],
-    "release_tag": "ggsegBrainnetome-v2.0.3"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegPower": {
     "version": "2.0.1",
     "sha": "48b8186d6e39b19d60fc4f681ac8a5b65d64c30b",
     "title": "Power Atlas for the 'ggseg' Ecosystem",
     "description": "Power functional network cortical parcellation atlas for\nthe 'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object\nwith 2D polygon geometry for use with 'ggseg'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegPower-v2.0.1",
-    "files": [
-      {
-        "name": "power_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegPower-v2.0.1/power_2d.parquet",
-        "sha256": "fd1d0a2eea314282f3789c3457beb16d5e1507a79cee9df02e6570f828896146",
-        "size": 62630
-      },
-      {
-        "name": "power_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegPower-v2.0.1/power_core.parquet",
-        "sha256": "bc8af4a68844f04ce26bfc2f3ad0bff37305298d25d37e25799ad78ec43fb6bf",
-        "size": 2981
-      },
-      {
-        "name": "power_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegPower-v2.0.1/power_3d.parquet",
-        "sha256": "4902a303f270d6713784d09373dfc79d080494ece10c2b8fa1cb2d4832bdc22c",
-        "size": 21072
-      }
-    ],
-    "release_tag": "ggsegPower-v2.0.1"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegIca": {
     "version": "2.0.1",
     "sha": "0f7a6eaf78df45bb74b77cbca4991cfe5dccc092",
     "title": "ICA Atlas for the 'ggseg' Ecosystem",
     "description": "Probabilistic independent component analysis (ICA)\ncortical atlas for the 'ggseg' ecosystem. Provides a unified\n'ggseg_atlas' object with 2D polygon geometry for use with\n'ggseg'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegIca-v2.0.1",
-    "files": [
-      {
-        "name": "ica_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegIca-v2.0.1/ica_2d.parquet",
-        "sha256": "694b8826d21fd2a6ec937328fa825031324edf8f304c56affb42c2091ed903b1",
-        "size": 64506
-      },
-      {
-        "name": "ica_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegIca-v2.0.1/ica_core.parquet",
-        "sha256": "64ed71f8b1338b9fb60e427d15e614cba5e2e13a2c5c4797389bc201426da8d3",
-        "size": 3229
-      },
-      {
-        "name": "ica_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegIca-v2.0.1/ica_3d.parquet",
-        "sha256": "7b7c0e128f74866ce10887738abb29ab133ad7f716567baa80f77ff97c9b1e4e",
-        "size": 26486
-      }
-    ],
-    "release_tag": "ggsegIca-v2.0.1"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegGordon": {
     "version": "2.0.1",
     "sha": "2af4da415d04f7ba96acf3259b355ce20148759c",
     "title": "Gordon Atlas for the 'ggseg' Ecosystem",
     "description": "Gordon resting-state cortical parcellation atlas for the\n'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object with\n2D polygon geometry for use with 'ggseg'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegGordon-v2.0.1",
-    "files": [
-      {
-        "name": "gordon_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegGordon-v2.0.1/gordon_2d.parquet",
-        "sha256": "f8281a01b411c60e65cf36addb68d3cd96993b698e905b104153886acb484f1e",
-        "size": 80692
-      },
-      {
-        "name": "gordon_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegGordon-v2.0.1/gordon_core.parquet",
-        "sha256": "98addf1a8b8c6c2beb74c44a56863e6c439292556b6ebbd77dd14761b6fe6494",
-        "size": 4589
-      },
-      {
-        "name": "gordon_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegGordon-v2.0.1/gordon_3d.parquet",
-        "sha256": "1bd6547f52b52e28c527d2c1c03e54c8e94dbbd91b91b1e75c19e74c2109f42c",
-        "size": 26919
-      }
-    ],
-    "release_tag": "ggsegGordon-v2.0.1"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegArslan": {
     "version": "2.0.1",
     "sha": "8c1ca44c7782b7be74e8b39f379b4d0c6be0e273",
     "title": "Arslan Atlas for the 'ggseg' Ecosystem",
     "description": "Arslan multi-level parcellation atlas for the 'ggseg'\necosystem. Provides a unified 'ggseg_atlas' object with both 2D\npolygon geometry and 3D vertex indices, for use with 'ggseg'\nand 'ggseg3d'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegArslan-v2.0.1",
-    "files": [
-      {
-        "name": "arslan_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegArslan-v2.0.1/arslan_2d.parquet",
-        "sha256": "484cb3faa81fbece3d8d1bdc2c14ce3994ceb0d981d3a789a02e51097fc76195",
-        "size": 42159
-      },
-      {
-        "name": "arslan_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegArslan-v2.0.1/arslan_core.parquet",
-        "sha256": "278ef52e085d8ff64371a49dec42ab654ea2c8b823b2e1f8858668c079aa55fc",
-        "size": 2292
-      },
-      {
-        "name": "arslan_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegArslan-v2.0.1/arslan_3d.parquet",
-        "sha256": "af90c73a9ea2ccc17b5adad8a31bf3ed09b91910755ea2d35b65902aec627d8e",
-        "size": 29163
-      }
-    ],
-    "release_tag": "ggsegArslan-v2.0.1"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegAicha": {
     "version": "2.0.1",
     "sha": "98062407bb18aa774bb6667bd9a703d004c1c8cf",
     "title": "AICHA Atlas for the 'ggseg' Ecosystem",
     "description": "AICHA (Atlas of Intrinsic Connectivity of Homotopic Areas)\natlas for the 'ggseg' ecosystem. Provides a unified\n'ggseg_atlas' object with both 2D polygon geometry and 3D\nvertex indices, for use with 'ggseg' and 'ggseg3d'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegAicha-v2.0.1",
-    "files": [
-      {
-        "name": "aicha_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAicha-v2.0.1/aicha_2d.parquet",
-        "sha256": "6158ceb51346e9410ece71f729dc32e4f463b238cf3345a4ba416dd8b47432f3",
-        "size": 124106
-      },
-      {
-        "name": "aicha_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAicha-v2.0.1/aicha_core.parquet",
-        "sha256": "049031c893aca7b8bd6a2300fa7af1f47adfc4c2aa4c7af60ef683692e78f63f",
-        "size": 5394
-      },
-      {
-        "name": "aicha_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAicha-v2.0.1/aicha_3d.parquet",
-        "sha256": "2bf4bcba504364fe90fbeb2f790ad7d22ddb40fc8eb73f8e832c38ca31e9c3b6",
-        "size": 31813
-      }
-    ],
-    "release_tag": "ggsegAicha-v2.0.1"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegSchaefer": {
     "version": "2.0.2",
     "sha": "018933935fd94ebf2e5cf8dc9462d994b3616e0e",
     "title": "Schaefer Atlas for the 'ggsegverse' Ecosystem",
     "description": "Schaefer cortical atlas for the 'ggseg' ecosystem.\nProvides unified 'ggseg_atlas' objects with both 2D polygon\ngeometry and 3D vertex indices, for use with 'ggseg' and\n'ggseg3d'. Includes 7-network and 17-network parcellations at\nresolutions from 100 to 1000 parcels.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegSchaefer-v2.0.2",
-    "files": [
-      {
-        "name": "schaefer17_500_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_500_core.parquet",
-        "sha256": "58738b4319ad3a4251a0358fdc61d12e9b5fefbd120d6a745ed8d63ec63e612e",
-        "size": 6702
-      },
-      {
-        "name": "schaefer7_200_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_200_2d.parquet",
-        "sha256": "81278fdb2c8c3a77b1a302a00fa88b0b14758f96515ea5cd2839c3d563e2988a",
-        "size": 632036
-      },
-      {
-        "name": "schaefer17_800_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_800_2d.parquet",
-        "sha256": "7969e6c4601765bd2d0a98351c18523bfa8db43974055b80f59cd83e7f9dc5ba",
-        "size": 1184511
-      },
-      {
-        "name": "schaefer7_100_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_100_3d.parquet",
-        "sha256": "078ebc2023d09aafd35e3bc00d968bdd353d277333472cd9722349cb739501d7",
-        "size": 25540
-      },
-      {
-        "name": "schaefer17_700_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_700_2d.parquet",
-        "sha256": "a035f5bac3f8704df770195217ee70f88224fe17a24247ff8680e9250029b5e0",
-        "size": 1131399
-      },
-      {
-        "name": "schaefer7_500_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_500_2d.parquet",
-        "sha256": "66f8d9643c1869fa15e77bdfa114472e5893c765aadb2aafdaf9ff4663dce793",
-        "size": 972763
-      },
-      {
-        "name": "schaefer17_700_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_700_core.parquet",
-        "sha256": "b822836070159224fcb917e667b33c1dbec3462fec0f30cc8ccf65011c4574c2",
-        "size": 8401
-      },
-      {
-        "name": "schaefer17_900_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_900_3d.parquet",
-        "sha256": "b6668f54f9630e8c2f610e6104162cc982109551e2562b66f9a1a811838d4b3a",
-        "size": 34239
-      },
-      {
-        "name": "schaefer7_600_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_600_3d.parquet",
-        "sha256": "cc74210bf549e70c2b5e4ac547caac1f8a66ad5e5b5a752237fb0311f6126165",
-        "size": 31102
-      },
-      {
-        "name": "schaefer7_300_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_300_2d.parquet",
-        "sha256": "63090614b883f4811bfb8b4de8f6416c8c7847e35035d8360893436ef04445df",
-        "size": 755573
-      },
-      {
-        "name": "schaefer17_200_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_200_3d.parquet",
-        "sha256": "fc590ba84eba69d2d2af3e8cf0466a586c88c32ec26dafac1480f2ff51218380",
-        "size": 25860
-      },
-      {
-        "name": "schaefer7_700_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_700_core.parquet",
-        "sha256": "7be65b8c0a7f877fe1e16caee22ed85818d5efc7fe9337bdea6a9b091bf0881d",
-        "size": 7758
-      },
-      {
-        "name": "schaefer7_1000_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_1000_2d.parquet",
-        "sha256": "7f30f47de9dcca20e2c688c98df18a431d403d4a3ed6725f13769bef2f05e65b",
-        "size": 1338904
-      },
-      {
-        "name": "schaefer7_600_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_600_core.parquet",
-        "sha256": "ab61b165673abcb7419c17c8ca5b209e9ad5be1651fae4e2e7905c3a85d7f323",
-        "size": 7151
-      },
-      {
-        "name": "schaefer7_400_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_400_2d.parquet",
-        "sha256": "d5f6359ce11aca537eeb4852c44a4d1c9f1d2eaadefff7f571f42a2e866fa1f0",
-        "size": 864571
-      },
-      {
-        "name": "schaefer17_300_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_300_core.parquet",
-        "sha256": "90826582ff73e533ec20be5ac2eed4d80de5bca1e93d6b42feaabbf9e105b35d",
-        "size": 5277
-      },
-      {
-        "name": "schaefer7_400_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_400_core.parquet",
-        "sha256": "65a4969cfbf1c0f42f2fdb620f8ac16e4760a27375fb3ee8230ad02ef61bd6cc",
-        "size": 5477
-      },
-      {
-        "name": "schaefer17_1000_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_1000_2d.parquet",
-        "sha256": "b554ce5e9b94a22c6a0374e3ab0276678286f97498fbb50fe0dacc88f0403ef1",
-        "size": 1339198
-      },
-      {
-        "name": "schaefer7_300_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_300_core.parquet",
-        "sha256": "b52b0d36768184992b5db8d42fe91942ad1dec76a9794197852a3c4d7242fc5f",
-        "size": 4680
-      },
-      {
-        "name": "schaefer17_400_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_400_3d.parquet",
-        "sha256": "528694c0749a606feb4f80e995408a1031f21f7edcd4f0ba5ba01cea63acb58c",
-        "size": 28791
-      },
-      {
-        "name": "schaefer17_100_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_100_core.parquet",
-        "sha256": "61f3ec7ed00d824a01a74a4d953fec335e8aeea5463dd410022470be75285528",
-        "size": 3472
-      },
-      {
-        "name": "schaefer7_600_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_600_2d.parquet",
-        "sha256": "34eaaed37939be835e37f95116b5d28731138c76167c1a7a10165f9027f1c87d",
-        "size": 1033478
-      },
-      {
-        "name": "schaefer17_600_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_600_2d.parquet",
-        "sha256": "60bf85c5fbc552f61c641953e9781792d707f02def52bb2d14678fd20537afcd",
-        "size": 1033683
-      },
-      {
-        "name": "schaefer17_100_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_100_3d.parquet",
-        "sha256": "02c5eeb0aa7015419cd5e39d1bdeda20ce5c426c6d105d6f4fd73187e26c62d9",
-        "size": 25532
-      },
-      {
-        "name": "schaefer7_200_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_200_core.parquet",
-        "sha256": "3706e237765c6311115e1f5e45affab9927d9e46c8ffb93a537b06dbd0c713b0",
-        "size": 3968
-      },
-      {
-        "name": "schaefer7_700_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_700_3d.parquet",
-        "sha256": "21862b553a70c1cc5f5f7690a6e141b93d57f68aeaed1f09227b908947b02d03",
-        "size": 31908
-      },
-      {
-        "name": "schaefer7_900_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_900_core.parquet",
-        "sha256": "d532b539d02fcf13af6c404865c3f54576eda8aaeef28a1f51b47c254775e0d0",
-        "size": 9247
-      },
-      {
-        "name": "schaefer17_300_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_300_2d.parquet",
-        "sha256": "f99bc422bc83449646a284d75f3714711938b9129af79950ef6b5c6355ed9b07",
-        "size": 755752
-      },
-      {
-        "name": "schaefer17_100_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_100_2d.parquet",
-        "sha256": "86df3c5bd4495cae35a396c47cd96243836beb72fff2696f0ee01f1f977a9896",
-        "size": 476628
-      },
-      {
-        "name": "schaefer17_200_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_200_2d.parquet",
-        "sha256": "8716310e1e9794a374f3a1d4b0cc9a67e564f11b8520044597810d1bb3e4969b",
-        "size": 632157
-      },
-      {
-        "name": "schaefer17_400_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_400_core.parquet",
-        "sha256": "7ba5527a1fe3aaaacdcf36a270219ec9c3caec15e7c20bac9c3530b9052faa9d",
-        "size": 6035
-      },
-      {
-        "name": "schaefer17_500_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_500_3d.parquet",
-        "sha256": "1b788341f7e0896ffbb6a6334c3afb71d182e92f6b64c98ee8c80dd5b4e69782",
-        "size": 30429
-      },
-      {
-        "name": "schaefer7_500_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_500_3d.parquet",
-        "sha256": "ed00fcc62e81c21b818b176395fc2516958745a1afbab034024ebb49336f204c",
-        "size": 30051
-      },
-      {
-        "name": "schaefer7_300_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_300_3d.parquet",
-        "sha256": "68920190087751eabfe960896bcfc2877bedad17d5079310d91ec39c6b0bd23f",
-        "size": 26937
-      },
-      {
-        "name": "schaefer17_800_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_800_3d.parquet",
-        "sha256": "c6597c0040bb59ec758b36c4147146bc77cca175f19bdbdea496e98f2a941014",
-        "size": 33496
-      },
-      {
-        "name": "schaefer17_1000_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_1000_3d.parquet",
-        "sha256": "652b8199673b8a3cc5038800b0ee4a367d59bc2c1344397be219873379b5d34d",
-        "size": 35040
-      },
-      {
-        "name": "schaefer17_500_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_500_2d.parquet",
-        "sha256": "11d0e88f3bd9b6a10e7f0fda40c96cefccb657362fb213ba8a67e44ce024c848",
-        "size": 972955
-      },
-      {
-        "name": "schaefer7_100_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_100_core.parquet",
-        "sha256": "8a8cd27adc8f7fe13380bf7dcda7da62828baa8b872984d1ca17a05d8832bf7c",
-        "size": 3171
-      },
-      {
-        "name": "schaefer17_800_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_800_core.parquet",
-        "sha256": "f1d8d012e6c0aa1e127f662f2e5966a7aceac682302887281cb3fb926a766c51",
-        "size": 9047
-      },
-      {
-        "name": "schaefer17_700_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_700_3d.parquet",
-        "sha256": "fce4b8feec1dc3c27eed0f08e6d9de6a5591a5de00f4d4412498e60f56374e28",
-        "size": 32232
-      },
-      {
-        "name": "schaefer17_200_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_200_core.parquet",
-        "sha256": "c5e55f45d992f71e0970538772dea7ff8a8df1200d6b77e5f04a2b05c17af7e5",
-        "size": 4399
-      },
-      {
-        "name": "schaefer7_900_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_900_3d.parquet",
-        "sha256": "fe5520e69806158d4aa78f0d7620a866c9461f2fdbc7492fcf99ebc12dfb89c6",
-        "size": 33899
-      },
-      {
-        "name": "schaefer7_100_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_100_2d.parquet",
-        "sha256": "a94ec018547cc92c292b611e723bdf96c1bdb76465ff7ea23b09178f9f1b6ce5",
-        "size": 476535
-      },
-      {
-        "name": "schaefer7_1000_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_1000_3d.parquet",
-        "sha256": "dcb4774aa0680219f803b341167c2706be119aa7bc0d3cf0a7e32eb6180cdc37",
-        "size": 34621
-      },
-      {
-        "name": "schaefer17_600_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_600_core.parquet",
-        "sha256": "e46e2be26b7d56932338aa66959acb621d3c8d95d8ff7a62d441a0c6538b45e4",
-        "size": 7549
-      },
-      {
-        "name": "schaefer7_700_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_700_2d.parquet",
-        "sha256": "e200392be73da55cfcb9cab39746d1eb2b375990fde8495b8fc71b13cf909be0",
-        "size": 1131141
-      },
-      {
-        "name": "schaefer17_900_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_900_core.parquet",
-        "sha256": "087ae403c8d73dd02c36bcaa281691b45bc0afb77e8016d49388682b609de230",
-        "size": 9859
-      },
-      {
-        "name": "schaefer7_400_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_400_3d.parquet",
-        "sha256": "143efd968535e2bccb625365be7c52da646cde6ef6d4785dabbe2950b96a044c",
-        "size": 28519
-      },
-      {
-        "name": "schaefer7_500_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_500_core.parquet",
-        "sha256": "03447382f0fb2de5140e6b94b5e7d225f647ee284f8020bb1262fe81b6048735",
-        "size": 6171
-      },
-      {
-        "name": "schaefer7_800_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_800_3d.parquet",
-        "sha256": "7dff21bca61981fb9f4ec838dc99d62d633ee1d7be9348db8c3d403d54ade2fd",
-        "size": 33163
-      },
-      {
-        "name": "schaefer7_1000_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_1000_core.parquet",
-        "sha256": "cc01ee89a232717dcd865748687aa3f006e64d5c39f3b32f265d3d866c7faf70",
-        "size": 10088
-      },
-      {
-        "name": "schaefer7_900_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_900_2d.parquet",
-        "sha256": "23d93d06f9c87b8f879dea903ad52e13d799e199a745fce5efeb59bcf968efd0",
-        "size": 1279874
-      },
-      {
-        "name": "schaefer17_400_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_400_2d.parquet",
-        "sha256": "6f3485d10283c284e7f0f69abceb64fe2391adba2694dccbdb4ffcd5a5ddf3a7",
-        "size": 864768
-      },
-      {
-        "name": "schaefer7_200_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_200_3d.parquet",
-        "sha256": "ce495887152ae3b1cf1723c671d0b1db1b1a0ce2e6aba9d83e24c61394f01712",
-        "size": 25678
-      },
-      {
-        "name": "schaefer17_1000_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_1000_core.parquet",
-        "sha256": "dd2d568df0b825fbf673d8de81a74f0c18960ce9973f85c6457fb7a2c930d8bd",
-        "size": 10549
-      },
-      {
-        "name": "schaefer17_300_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_300_3d.parquet",
-        "sha256": "e3103365ab897e4622615fa483a78811d3e5d6299d4fcbf96af94158d7c8a44f",
-        "size": 27304
-      },
-      {
-        "name": "schaefer7_800_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_800_core.parquet",
-        "sha256": "a6ae5ac1463f8c559f940844b233e4156eb9f56c6e533894d159a28048e5ed9b",
-        "size": 8658
-      },
-      {
-        "name": "schaefer17_900_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_900_2d.parquet",
-        "sha256": "88e5edfcbea59d51b752081f2a51f3d386b4951a941a73c37839027926c343a2",
-        "size": 1280152
-      },
-      {
-        "name": "schaefer7_800_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer7_800_2d.parquet",
-        "sha256": "c4dc679e0425f47f0de9516d9710dcc805db6298cd7d5bb32d40722b69373b87",
-        "size": 1184262
-      },
-      {
-        "name": "schaefer17_600_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegSchaefer-v2.0.2/schaefer17_600_3d.parquet",
-        "sha256": "db4cc2dcb599ad27f6c0d996fab0a0651940875f4ef5e746f1b947e445eef8f4",
-        "size": 31446
-      }
-    ],
-    "release_tag": "ggsegSchaefer-v2.0.2"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegYeo2011": {
     "version": "2.0.2",
     "sha": "bd9152d0eddb676bf13c5bd8fc3f3db1e481f3e8",
     "title": "Yeo 2011 Atlas for the 'ggsegverse' Ecosystem",
     "description": "Yeo 2011 resting-state network atlases for the 'ggseg'\necosystem. Provides 'ggseg_atlas' objects with 2D polygon\ngeometry for use with 'ggseg'. Includes both 7-network and\n17-network parcellations.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegYeo2011-v2.0.2",
-    "files": [
-      {
-        "name": "yeo17_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegYeo2011-v2.0.2/yeo17_3d.parquet",
-        "sha256": "0fbb59fc95ad79890a667a0854f638487981d3ea35c99f21761ce4d54c3e0eaa",
-        "size": 22685
-      },
-      {
-        "name": "yeo7_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegYeo2011-v2.0.2/yeo7_3d.parquet",
-        "sha256": "ba479240f8495650919bc4e1b4c3b9da4ba3d60152d31da33cd8fe4348c6c7e1",
-        "size": 24628
-      },
-      {
-        "name": "yeo7_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegYeo2011-v2.0.2/yeo7_2d.parquet",
-        "sha256": "e8b4e56e7c410305d4121118376ebb0e73fac5588781f3c75229edf22a2a2ddc",
-        "size": 380320
-      },
-      {
-        "name": "yeo7_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegYeo2011-v2.0.2/yeo7_core.parquet",
-        "sha256": "0a3f8395a647789ebaabe16498bbf60552437269072f6bcd63cc4437f94a0ab6",
-        "size": 1914
-      },
-      {
-        "name": "yeo17_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegYeo2011-v2.0.2/yeo17_2d.parquet",
-        "sha256": "f10ef730edd7bf9156497a23a434fc7a27437ec4022e4f2b8de776fa211647d3",
-        "size": 516786
-      },
-      {
-        "name": "yeo17_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegYeo2011-v2.0.2/yeo17_core.parquet",
-        "sha256": "ac05d9af6ad7b62465d77fbd921968c0c4a5b5bcdc9d4e21323a783dd55735ba",
-        "size": 2084
-      }
-    ],
-    "release_tag": "ggsegYeo2011-v2.0.2"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegGlasser": {
     "version": "2.0.3",
     "sha": "cb6f5a2f52a8eaf18b1d45b2ae7403b642b8e896",
     "title": "Glasser Atlas for the 'ggsegverse' Ecosystem",
     "description": "Glasser multi-modal cortical parcellation (HCP) atlas for\nthe 'ggseg' ecosystem. Provides a unified 'ggseg_atlas' object\nwith 2D polygon geometry for use with 'ggseg'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegGlasser-v2.0.3",
-    "files": [
-      {
-        "name": "glasser_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegGlasser-v2.0.3/glasser_3d.parquet",
-        "sha256": "8dfc074426833f94fd8baa717b126d0d1904b4e923f806b105d66039489569de",
-        "size": 30393
-      },
-      {
-        "name": "glasser_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegGlasser-v2.0.3/glasser_core.parquet",
-        "sha256": "dc79642d3eb15b0080b69b8f54a1bced6b842631f24dd01db816fb921011f59d",
-        "size": 5444
-      },
-      {
-        "name": "glasser_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegGlasser-v2.0.3/glasser_2d.parquet",
-        "sha256": "d8d2bd710b998cf13b0987a384603d468a03a83da5b5d25411ba6525949a5586",
-        "size": 983684
-      }
-    ],
-    "release_tag": "ggsegGlasser-v2.0.3"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegAAL": {
     "version": "2.0.2",
     "sha": "f0da4fab6050b0a639e14ebc1b8005eff777bd37",
     "title": "AAL Atlases for the 'ggsegverse' Ecosystem",
     "description": "AAL (Automated Anatomical Labeling) atlases for the\n'ggseg' ecosystem. Provides unified 'ggseg_atlas' objects for\nAAL2 (cortical, Rolls et al. 2015) and AAL3 (cortical,\nsubcortical, cerebellum, Rolls et al. 2020), with both 2D\npolygon geometry and 3D vertex/mesh data for use with 'ggseg'\nand 'ggseg3d'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegAAL-v2.0.2",
-    "files": [
-      {
-        "name": "aal3_subcortical_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_subcortical_core.parquet",
-        "sha256": "e67a25455a6ac89e0e6c00ef1fb6f80ed773870cc8720426ad5279583813ce9c",
-        "size": 2211
-      },
-      {
-        "name": "aal3_cerebellum_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_cerebellum_core.parquet",
-        "sha256": "83e681b760da3be5619eabc489255c8e1c43e6674ecf6c783a2b896f260366d2",
-        "size": 2139
-      },
-      {
-        "name": "aal3_subcortical_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_subcortical_2d.parquet",
-        "sha256": "7ad9a3b50ec547ee3fb37d0fc3300a21aefaa15f321db2a6d7b8cf9f4c535516",
-        "size": 77753
-      },
-      {
-        "name": "aal2_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal2_core.parquet",
-        "sha256": "ec6841888c4be857e5df0e4ce6e1f9ecf10ccf391cb5e5eddf087b1cf8e40354",
-        "size": 2974
-      },
-      {
-        "name": "aal3_cortical_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_cortical_2d.parquet",
-        "sha256": "233fdb2bd5717ca29b4aef2d0df9dd9755ff68fdaf47edc8ba315a9e2e81dd8d",
-        "size": 985780
-      },
-      {
-        "name": "aal3_subcortical_mesh.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_subcortical_mesh.parquet",
-        "sha256": "826e9cc58ea80315aede6985f3c2da3bc7ffaba4f5724a2071f624554ae129cc",
-        "size": 705136
-      },
-      {
-        "name": "aal3_cortical_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_cortical_core.parquet",
-        "sha256": "18700b7d2a6c853e6f9e57dfe81da3f23f8fd3331755c8ae94694e8239e63a9e",
-        "size": 2957
-      },
-      {
-        "name": "aal3_cerebellum_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_cerebellum_2d.parquet",
-        "sha256": "3e8969cb7d2810436419df1afd3e16c3e32ee010ab3f45752772f361d148f3d8",
-        "size": 74999
-      },
-      {
-        "name": "aal2_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal2_3d.parquet",
-        "sha256": "2c25e1fdb36b28ed9614c39288103939373ab4074aa6b70ea64be91c7e888e09",
-        "size": 27573
-      },
-      {
-        "name": "aal_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal_2d.parquet",
-        "sha256": "96e84bb080937ce3289c7852f324d191ea65df8e06defed9219183eafcdcd610",
-        "size": 536123
-      },
-      {
-        "name": "aal_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal_core.parquet",
-        "sha256": "521ba6578f384b3449a50aac10665bb0b61766175320e2856f47f443a0835336",
-        "size": 2578
-      },
-      {
-        "name": "aal_3d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal_3d.parquet",
-        "sha256": "ce1c34307082e4c7a3c91ac4ef903bbc2d3691d031cb6086627568bbef301623",
-        "size": 27333
-      },
-      {
-        "name": "aal2_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal2_2d.parquet",
-        "sha256": "9a76582d78eddafe1e8893f93700f129472b6c217e6ad61be684aa75ee4a13da",
-        "size": 30660
-      },
-      {
-        "name": "aal3_cerebellum_mesh.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegAAL-v2.0.2/aal3_cerebellum_mesh.parquet",
-        "sha256": "c70269a06a1dafe0dcd27d7d0a2f631d5fc8dc5c25cc6f8f7e47775e57d32542",
-        "size": 1427630
-      }
-    ],
-    "release_tag": "ggsegAAL-v2.0.2"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegHO": {
     "version": "2.0.0",
     "sha": "e2998a5a43218f5a92a8e6bae9ad0bac41e2c566",
     "title": "Harvard-Oxford Atlas for the 'ggseg' Ecosystem",
     "description": "Harvard-Oxford cortical atlas for the 'ggseg' ecosystem.\nProvides a unified 'ggseg_atlas' object with 2D polygon\ngeometry for use with 'ggseg'.",
-    "exported": true,
-    "release_url": "https://github.com/ggsegverse/ggsegpy-data/releases/tag/ggsegHO-v2.0.0",
-    "files": [
-      {
-        "name": "hoCort_2d.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegHO-v2.0.0/hoCort_2d.parquet",
-        "sha256": "cf10ff41252bcd1d09a8f220e98a8e418ec1f43e66f577967e2c106d7fe76842",
-        "size": 70333
-      },
-      {
-        "name": "hoCort_core.parquet",
-        "url": "https://github.com/ggsegverse/ggsegpy-data/releases/download/ggsegHO-v2.0.0/hoCort_core.parquet",
-        "sha256": "8211816b14369131e9d46b29e18902c33fd1c0e8370ad5bf8e35971e5ec71af8",
-        "size": 43153
-      }
-    ],
-    "release_tag": "ggsegHO-v2.0.0"
+    "exported": false,
+    "release_url": null,
+    "files": []
   },
   "ggsegTracula": {
     "version": "1.0.1.002",
